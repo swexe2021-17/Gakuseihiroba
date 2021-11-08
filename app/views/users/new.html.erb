@@ -1,1 +1,8 @@
 <p>test</p>
+<%= form_for @user , url: {action: :create} do |f| %>
+<%= f.label :uid, 'uresid' %>
+<%= f.text_field :uid %>
+<%= f.label :password, 'pass' %>
+<%= f.text_field :password %>
+<%= f.submit '登録' %>
+<% end %>

@@ -1,0 +1,3 @@
+class UserCreate < ApplicationRecord
+    
+end
