@@ -1,3 +1,4 @@
+require 'bcrypt'
 class UsersController < ApplicationController
     def index
        
@@ -10,9 +11,9 @@ class UsersController < ApplicationController
     def create
              @user = User.new(uid: params[:uid] ,
              password: BCrypt::Password.create(params[:password]),
-             password_confirmation: params[:password_confirmation],contents: params[:contents])
+             password_confirmation: params[:password_confirmation])
        if @user.save
-       flash[:notice] = params[:uid]+'さんをユーザに登録しました'
+    
        redirect_to root_path
        else
        render 'new'
