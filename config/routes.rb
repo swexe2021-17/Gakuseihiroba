@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'login/index'
-  get 'user/new'
-    root 'users#new'
-  get 'users/new', to: 'users#new'
-  resources :users
+    root 'users#index'
+    get 'login/index'
+
+    resources :users
+    resources :questions
 end

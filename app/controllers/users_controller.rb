@@ -1,6 +1,7 @@
 require 'bcrypt'
 class UsersController < ApplicationController
     def index
+<<<<<<< HEAD
        
     end
     
@@ -18,5 +19,9 @@ class UsersController < ApplicationController
        else
        render 'new'
        end
+=======
+        @users=User.all
+        @questions=Question.all
+>>>>>>> question_made
     end
 end

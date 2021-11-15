@@ -1,0 +1,5 @@
+<%= form_for @question , url: {action: :create} do |q| %>
+    <p><%= q.label :que_class, '科目名' %>
+    <%= q.text_field :que_class %></p>
+    <%= q.submit '登録' %>
+<% end %>

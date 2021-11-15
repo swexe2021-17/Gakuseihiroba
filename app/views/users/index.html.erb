@@ -1,0 +1,9 @@
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+<% end %>
+
+<% @questions.each do |questions| %>
+<p><%= questions.que_class %></p>
+<% end %>
+
+<p><%= link_to '新規追加', '/questions/new' %></p>
