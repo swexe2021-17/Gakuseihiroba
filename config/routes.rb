@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-    root 'users#new'
+    root 'users#index'
+    
+    resources :questions
+    resources :users
 end

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_090152) do
+ActiveRecord::Schema.define(version: 2021_11_10_082104) do
+
+  create_table "questions", force: :cascade do |t|
+    t.string "que_class"
+    t.string "que_title"
+    t.string "message"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "password"
