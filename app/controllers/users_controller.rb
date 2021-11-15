@@ -13,7 +13,7 @@ class UsersController < ApplicationController
              password: BCrypt::Password.create(params[:password]),
              password_confirmation: params[:password_confirmation])
        if @user.save
-    
+           flash[:notice] =  'ユーザに登録しました'
        redirect_to root_path
        else
        render 'new'
