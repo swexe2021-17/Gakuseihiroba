@@ -19,18 +19,18 @@ ActiveRecord::Schema.define(version: 2021_11_15_070914) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_creates", force: :cascade do |t|
-    t.string "uid"
-    t.string "pass"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string "que_class"
     t.string "que_title"
     t.string "message"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_creates", force: :cascade do |t|
+    t.string "uid"
+    t.string "pass"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

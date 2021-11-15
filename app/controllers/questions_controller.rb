@@ -15,10 +15,10 @@ class QuestionsController < ApplicationController
         
         if @question.save
             flash[:notice]="投稿しました"
-            redirect_to "/"
+            redirect_to root_path
         else
             flash[:notice]="失敗"
-            redirect_to "new"
+            redirect_to '/questions/new'
         end
     end
 end
