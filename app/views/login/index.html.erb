@@ -1,3 +1,10 @@
-<h1>Login#index</h1>
-<p>Find me in app/views/login/index.html.erb</p>
-<p><%= link_to 'ユーザ登録', '/users#new' %></p>
+<% if flash[:alert] %>
+    <%= flash[:alert] %>
+<% end %>
+<%= form_tag 'index', method: :post do%>
+   <%= label_tag :uid, 'ユーザーID' %>
+    <%= text_field_tag :uid %>
+    <%= label_tag :password, 'パスワード' %>
+    <%= password_field_tag :password %>
+    <%= submit_tag 'ログイン' %>
+<%end%>

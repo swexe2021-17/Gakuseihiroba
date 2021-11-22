@@ -1,2 +1,4 @@
+
 class Login < ApplicationRecord
+    
 end
