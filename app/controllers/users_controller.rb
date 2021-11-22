@@ -17,6 +17,7 @@ class UsersController < ApplicationController
            flash[:notice] =  'ユーザに登録しました'
        redirect_to root_path
        else
+       puts @user.errors.
        render 'new'
        end
     end
