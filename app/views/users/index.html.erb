@@ -2,8 +2,9 @@
     <%= flash[:notice] %>
 <% end %>
 
-<% @questions.each do |questions| %>
-<p><%= questions.que_class %></p>
+<% @questions.each do |question| %>
+<p> <%= question.que_class %>
+    <%= link_to '見る', "/questions/#{question.id}" %>
 <% end %>
 
 <p><%= link_to '質問投稿', '/questions/new' %></p>
