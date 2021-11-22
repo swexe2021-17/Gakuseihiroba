@@ -6,6 +6,8 @@
 <% @questions.each do |question| %>
 <p> <%= question.que_class %>
     <%= link_to '見る', "/questions/#{question.id}" %>
+    <!--質問したユーザ＝今のユーザなら表示↓-->
+    <%= link_to '編集', "/questions/#{question.id}/edit" %>
 </p>
 <% end %>
 

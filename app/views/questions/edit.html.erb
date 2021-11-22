@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+<% end %>
+
+<%= form_for @question , url: {action: :update} do |q| %>
+    <p><%= q.label :que_class, '科目名' %>
+    <%= q.text_field :que_class %>
+    <%= q.label :que_title, '題名' %>
+    <%= q.text_field :que_title %>
+    <%= q.label :message, '質問内容' %>
+    <%= q.text_field :message %></p>
+    <%= q.submit '更新' %>
+<% end %>
