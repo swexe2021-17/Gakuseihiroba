@@ -1,0 +1,10 @@
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+<% end %>
+
+<%= form_for @answer , url: {action: :create} do |q| %>
+    <p>
+    <%= q.label :ans_message, '回答内容' %>
+    <%= q.text_field :ans_message %></p>
+    <%= q.submit '登録' %>
+<% end %>

@@ -4,11 +4,13 @@
 <h1>学生広場</h1>
 
 <% @questions.each do |question| %>
-<p> <%= question.que_class %>
+<p>  <%= question.que_class %>&nbsp;&nbsp;&nbsp;
+    <%= question.que_title %>
     <%= link_to '見る', "/questions/#{question.id}" %>
     <!--質問したユーザ＝今のユーザなら表示↓-->
     <%= link_to '編集', "/questions/#{question.id}/edit" %>
 </p>
+<br>
 <% end %>
 
 <p><%= link_to '質問投稿', '/questions/new' %></p>
