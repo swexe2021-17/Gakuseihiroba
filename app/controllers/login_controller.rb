@@ -1,5 +1,6 @@
 require'bcrypt'
 class LoginController < ApplicationController
+     protect_from_forgery
      def login
    
         if User.find_by(uid: params[:user][:uid])
