@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 2021_11_29_065044) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "logins", force: :cascade do |t|
-    t.string "uid"
-    t.string "pass"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string "que_class"
     t.string "que_title"
@@ -36,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_065044) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "password"
+    t.string "pass"
     t.string "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

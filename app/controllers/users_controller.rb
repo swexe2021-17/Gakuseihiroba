@@ -1,4 +1,4 @@
-require 'bcrypt'
+
 class UsersController < ApplicationController
     def index
         @users=User.all
@@ -11,13 +11,35 @@ class UsersController < ApplicationController
     
     def create
              @user = User.new(uid: params[:user][:uid] ,
-             password: BCrypt::Password.create(params[:user][:password]),
-             password_confirmation: params[:user][:password_confirmation])
+             pass: BCrypt::Password.create(params[:user][:password]))
        if @user.save
-            flash[:notice] =  'ユーザに登録しました'
+            flash[:notice] =  params[:user][:uid]+'さんをユーザに登録しました'
             redirect_to root_path
        else
             render 'new'
        end
+    end
+    
+    def login_go
+       render 'login' 
+    end
+     
+    def login
+   
+        if user=User.find_by(uid: params[:uid])
+            if BCrypt::Password.new(user.pass) == params[:password]
+                session[:login_uid]=params[:uid]
+                flash[:notice] =  'ログインしました'
+                redirect_to root_path
+            end
+            
+        else 
+            render 'users/index'
+        end
+    end
+    
+    def logout
+        session.delete(:login_uid)
+        redirect_to root_path
     end
 end
