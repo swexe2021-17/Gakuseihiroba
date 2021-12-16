@@ -1,0 +1,79 @@
+body {
+  background-image: url(https://www.kindai.ac.jp/img/ogimg/ogp.jpg);
+  background-size: cover;
+}
+
+.lookedit {
+    font-size: 25px;
+}
+
+.title {
+    font-size:50px;
+    position: relative;
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+
+.new {
+   font-size: 35px;
+  font-weight: 600;
+  line-height: 1.4em;
+  filter: drop-shadow(10px 10px 5px #FFD9D7);
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  text-align:center;
+  line-height: 400px;
+  border-radius: 50%;
+  border: solid 3px skyblue;
+  float: left;
+}
+
+.question {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.4em;
+  filter: drop-shadow(10px 10px 5px #FFD9D7);
+  width: 400px;
+  height: 400px;
+  text-align:center;
+  line-height: 400px;
+  border-radius: 50%;
+  border: solid 3px skyblue;
+  float: right; 
+}
+
+.login {
+   font-size: 35px;
+  font-weight: 600;
+  line-height: 1.4em;
+  filter: drop-shadow(10px 10px 5px #FFD9D7);
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  text-align:center;
+  line-height: 400px;
+  border-radius: 50%;
+  border: solid 3px skyblue;
+   margin-left: 300px;
+  margin-right: auto;
+}
+
+.logout {
+   font-size: 35px;
+  font-weight: 600;
+  line-height: 1.4em;
+  filter: drop-shadow(10px 10px 5px #FFD9D7);
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  text-align:center;
+  line-height: 400px;
+  border-radius: 50%;
+  border: solid 3px skyblue;
+   margin-left: 300px;
+  margin-right: auto;
+}
