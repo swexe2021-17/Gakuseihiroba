@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <%= stylesheet_link_tag 'test', :media => "all" %>
   <head>
     <title>Gakuseihiroba</title>
     <%= csrf_meta_tags %>
@@ -13,9 +14,9 @@
     <%= yield %>
     <p>
     <% if session[:login_uid] %>
-      ログイン中（<%= session[:login_uid] %>さん）
+      <font size="6">ログイン中（<%= session[:login_uid] %>さん）</font>
     <% else %>
-      ログインしていません
+      <font size="6">ログインしていません</font>
     <% end %>
     </p>
   </body>

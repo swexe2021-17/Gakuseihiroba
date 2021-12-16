@@ -1,10 +1,18 @@
+<DOCTYPE html>
+<body>
+ 
+</body>
+
+<%= stylesheet_link_tag 'test', :media => "all" %>
+   
 <% if flash[:notice] %>
     <%= flash[:notice] %>
 <% end %>
-<h1>学生広場</h1>
+<h1 class="title">学生広場</h1>
+
 
 <% @questions.each do |question| %>
-<p>  <%= question.que_class %>&nbsp;&nbsp;&nbsp;
+<p class="lookedit">  <%= question.que_class %>&nbsp;&nbsp;&nbsp;
     <%= question.que_title %>
     <%= link_to '見る', "/questions/#{question.id}" %>
     <!--質問したユーザ＝今のユーザなら表示↓-->
@@ -13,6 +21,7 @@
 <br>
 <% end %>
 
+<<<<<<< HEAD
 <p><%= link_to '質問投稿', '/questions/new' %></p>
 <p><%= link_to 'ユーザー新規追加', '/users/new' %></p><br>
 
@@ -21,3 +30,15 @@
     <% else %>
         <p><%= link_to 'ログイン', '/users/login_go' %></p>
 <% end %>
+=======
+<p class="question"><%= link_to '質問投稿', '/questions/new' %></p><br>
+<p class="new"><%= link_to 'ユーザー新規追加', '/users/new' %></p><br>
+
+<% if session[:login_uid] %> 
+        <p class="logout"><%= link_to 'ログアウト', '/users/logout' %></p>
+    <% else %>
+        <p class="login"><%= link_to 'ログイン', '/users/login_go' %></p>
+<% end %>
+
+</DOCTYPE>
+>>>>>>> H
