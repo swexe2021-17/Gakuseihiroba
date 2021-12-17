@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery
-     private def current_user
-    if session[:uid]
-      User.find_by(id:login[:uid])
+    private
+    def current_user
+      if session[:login_uid]
+        User.find_by(uid: session[:login_uid])
+      end
     end
-  end
+    helper_method :current_user
 end

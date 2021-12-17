@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
     
     def create
         @answer=Answer.new(ans_message: params[:answer][:ans_message],
-        user_id: 1)#ほんとはsession[user_id]?
+        user_id: current_user.id)
         
         if @answer.save
             flash[:notice]="回答しました"
