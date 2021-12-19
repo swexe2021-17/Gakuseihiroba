@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_13_080252) do
+ActiveRecord::Schema.define(version: 2021_12_17_064245) do
 
   create_table "answers", force: :cascade do |t|
     t.string "ans_message"
@@ -33,9 +33,18 @@ ActiveRecord::Schema.define(version: 2021_12_13_080252) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "relations", force: :cascade do |t|
+    t.integer "que_id"
+    t.integer "ans_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "pass"
     t.string "uid"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

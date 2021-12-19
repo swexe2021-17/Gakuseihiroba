@@ -7,6 +7,11 @@ class AnswersController < ApplicationController
     def new
         @answer=Answer.new
     end
+
+    def show
+        @answer=Answer.find(params[:id]) 
+        @question=Question.find(params[:id])
+     end
     
     def create
         @answer=Answer.new(ans_message: params[:answer][:ans_message],

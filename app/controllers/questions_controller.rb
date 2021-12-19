@@ -15,8 +15,7 @@ class QuestionsController < ApplicationController
     
     def create
         @question=Question.new(que_class: params[:question][:que_class],
-        que_title: params[:question][:que_title],message: params[:question][:message],
-        user_id: 1)#ほんとはsession[user_id]?
+        que_title: params[:question][:que_title],message: params[:question][:message])#ほんとはsession[user_id]?
         
         if @question.save
             flash[:notice]="投稿しました"
@@ -34,8 +33,7 @@ class QuestionsController < ApplicationController
     def update
         question=Question.find(params[:id])
         question.update(que_class: params[:question][:que_class],
-        que_title: params[:question][:que_title],message: params[:question][:message],
-        user_id: 1)
+        que_title: params[:question][:que_title],message: params[:question][:message])
         if question.save
             flash[:notice]="更新しました"
             redirect_to root_path

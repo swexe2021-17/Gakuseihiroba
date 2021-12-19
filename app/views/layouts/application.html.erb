@@ -11,13 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
     <p>
     <% if session[:login_uid] %>
-      <font size="6">ログイン中（<%= session[:login_uid] %>さん）</font>
+      <font size="5">ログイン中（<%= session[:login_uid] %>さん）</font>
     <% else %>
-      <font size="6">ログインしていません</font>
+      <font size="5">ログインしていません</font>
     <% end %>
     </p>
+    <%= yield %>
   </body>
 </html>
