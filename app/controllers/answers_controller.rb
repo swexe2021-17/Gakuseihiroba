@@ -12,12 +12,14 @@ class AnswersController < ApplicationController
         @answers=Answer.all
         @answer=Answer.find(params[:id]) 
         @users=User.all
+        
         @question=Question.find(params[:id])
      end
     
     def create
         @answer=Answer.new(ans_message: params[:answer][:ans_message],
-        user_id: current_user.id)
+        user_id: current_user.id)#ほんとはsession[user_id]?
+        
         if @answer.save
             flash[:notice]="回答しました"
             redirect_to root_path

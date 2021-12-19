@@ -7,7 +7,9 @@
 <strong> <%= @question.que_title %> </strong>
 <p> <%= @question.message %> </p><br>
 
-<% @answers.zip(@users).each do |ans,use| %>
+
+<% @answers.each do |ans| %>
+    <% use=User.find_by(id: ans.user_id)  %>
         <h1><%= use.uid %>さんの回答</h1>
         <p> <%= ans.ans_message %> </p>
 <% end %>
