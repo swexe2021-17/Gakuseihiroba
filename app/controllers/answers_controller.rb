@@ -9,7 +9,10 @@ class AnswersController < ApplicationController
     end
 
     def show
+        @answers=Answer.all
         @answer=Answer.find(params[:id]) 
+        @users=User.all
+        
         @question=Question.find(params[:id])
      end
     

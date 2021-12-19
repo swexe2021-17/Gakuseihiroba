@@ -1,10 +1,13 @@
+<%= link_to 'ホームへ', root_path %>
 <h1>質問内容</h1>
 
 <p> 教科名：　<%= @question.que_class %> </p>
 <strong> <%= @question.que_title %> </strong>
-<p> 内容<%= @question.message %> </p><br>
+<p> <%= @question.message %> </p><br>
 
-<h1>〇〇さんの回答</h1>
-<p> <%= @answer.ans_message %> </p>
+<% @answers.zip(@users).each do |ans,use| %>
+        <h1><%= use.uid %>さんの回答</h1>
+        <p> <%= ans.ans_message %> </p>
+<% end %>
 
 <%= link_to 'ホームへ', root_path %>
