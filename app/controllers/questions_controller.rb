@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
     end
     
     def show
+       @user=User.find(params[:id])
        @question=Question.find(params[:id]) 
     end
     
@@ -17,6 +18,7 @@ class QuestionsController < ApplicationController
         @question=Question.new(que_class: params[:question][:que_class],
         que_title: params[:question][:que_title],message: params[:question][:message],
         user_id: current_user.id)
+
         
         if @question.save
             flash[:notice]="投稿しました"
@@ -37,6 +39,7 @@ class QuestionsController < ApplicationController
         question.update(que_class: params[:question][:que_class],
         que_title: params[:question][:que_title],message: params[:question][:message],
         user_id: current_user.id)
+
         if question.save
             flash[:notice]="更新しました"
             redirect_to root_path
