@@ -1,10 +1,13 @@
 body {
   background-image: url(https://www.kindai.ac.jp/img/ogimg/ogp.jpg);
   background-size: cover;
+  
 }
-
+.ques{
+  font-size: 45px;
+}
 .lookedit {
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .title {

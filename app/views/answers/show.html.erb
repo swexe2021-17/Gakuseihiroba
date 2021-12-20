@@ -3,15 +3,15 @@
 
 <h1>質問内容</h1>
 
-<p> 教科名：　<%= @question.que_class %> </p>
-<strong> <%= @question.que_title %> </strong>
-<p> <%= @question.message %> </p><br>
+<p class="ques"> <%= @question.que_class %> </p>
+<strong class="ques"> <%= @question.que_title %> </strong>
+<p class="ques"> <%= @question.message %> </p>
 
 
 <% @answers.each do |ans| %>
     <% use=User.find_by(id: ans.user_id)  %>
-        <h1><%= use.uid %>さんの回答</h1>
-        <p> <%= ans.ans_message %> </p>
+        <h1 class="ques"><%= use.uid %>さんの回答</h1>
+        <p class="ques"> <%= ans.ans_message %> </p>
 <% end %>
 
 <%= link_to 'ホームへ', root_path %>
