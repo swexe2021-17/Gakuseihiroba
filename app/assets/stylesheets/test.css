@@ -4,8 +4,12 @@ body {
   
 }
 .ques{
-    color: white;
+    
   font-size: 30px
+}
+.ansr{
+    color: white;
+    font-size: 30px
 }
 .lookedit {
     font-size: 35px;

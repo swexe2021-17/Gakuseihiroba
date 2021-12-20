@@ -10,8 +10,8 @@
 
 <% @answers.each do |ans| %>
     <% use=User.find_by(id: ans.user_id)  %>
-        <h1 class="ques"><%= use.uid %>さんの回答</h1>
-        <p class="ques"> <%= ans.ans_message %> </p>
+        <h1 class="ansr"><%= use.uid %>さんの回答</h1>
+        <p class="ansr"> <%= ans.ans_message %> </p>
 <% end %>
 
 <%= link_to 'ホームへ', root_path %>
